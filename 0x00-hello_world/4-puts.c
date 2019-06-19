@@ -1,8 +1,14 @@
-#include<4-puts.c>
+#include<stdio.h>
+#include<string.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+*/
 int main(void)
 {
-char str1[];
-trscpy(str1, "Programming is like building a multilingual puzzle");
-puts(str1);
+char string[40];
+strcpy(str, "Programming is like building a multilingual puzzle");
+puts(string);
 return (0);
 }
