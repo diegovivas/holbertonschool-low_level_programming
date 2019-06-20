@@ -10,6 +10,7 @@
  */
 int main(void)
 {
+
 	int n, Ls;
 
 	srand(time(0));
