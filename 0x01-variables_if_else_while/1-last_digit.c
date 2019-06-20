@@ -4,7 +4,7 @@
 /* more headers goes there */
 
 /**
- * main - Entry point
+ * main Last digit
  *
  * Return: Always 0 (Success)
  */
