@@ -4,7 +4,7 @@
 /* more headers goes there */
 
 /**
- * main: Last digit
+ ** main- entry Last digit block
  *
  * Return: Always 0 (Success)
  */
@@ -15,7 +15,6 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-/* your code goes there */
 	ni = n % 10;
 
 	if (ni > 5)
