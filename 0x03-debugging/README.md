@@ -1,0 +1,1 @@
+Readme about the debuging proyect for holbertonschool
