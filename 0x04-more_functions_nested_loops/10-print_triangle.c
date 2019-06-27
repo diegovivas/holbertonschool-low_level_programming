@@ -18,7 +18,7 @@ void print_triangle(int size)
 			}
 			else
 			{
-				_putchar('.');
+				_putchar(' ');
 }
 		}
 
