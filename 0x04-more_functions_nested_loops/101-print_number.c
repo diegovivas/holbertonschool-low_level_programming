@@ -12,10 +12,6 @@ int a, b, c, d, f;
 		_putchar('-');
 		n = n * -1;
 	}
-	else
-	{
-		n = n * 1;
-	}
 	b = n;
 	c = 1;
 	for (a = 1; b > 9; a++)
