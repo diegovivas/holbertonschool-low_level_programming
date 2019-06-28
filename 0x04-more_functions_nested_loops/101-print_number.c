@@ -28,7 +28,7 @@ int a, b, c, d, f;
 
 	for (f = 1; f <= a; f++)
 	{
-		if (n != 0)
+		if (n  0)
 		{
 			d = n / c;
 			_putchar(d + '0');
