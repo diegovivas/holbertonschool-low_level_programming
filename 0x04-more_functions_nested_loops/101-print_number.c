@@ -19,9 +19,10 @@ void print_number(int n)
 	}
 	b = g;
 	c = 1;
-	for (a = 1; b > 9; a++)
+	while (b > 9)
 	{
 		b = b / 10;
+		a++;
 		c = c * 10;
 	}
 	for (f = 1; f <= a; f++)
