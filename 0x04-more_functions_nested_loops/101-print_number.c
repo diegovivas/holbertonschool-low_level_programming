@@ -22,8 +22,9 @@ int a, b, c, d, f;
 	for (f = 1; f <= a; f++)
 	{
 		d = n / c;
-		_putchar(d + '0');
 		n = n % c;
 		c = c / 10;
+		_putchar(d + '0');
+
 	}
 }
