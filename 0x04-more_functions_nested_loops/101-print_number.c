@@ -19,18 +19,13 @@ int a, b, c, d, f;
 		n = n * 1;
 	}
 	b = n, c = 1;
-	if (b != 0)
+
+	for (a = 1; b > 9; a++)
 	{
-		for (a = 1; b > 9; a++)
-		{
-			b = b / 10;
-			c = c * 10;
-		}
+		b = b / 10;
+		c = c * 10;
 	}
-	else
-	{
-		_putchar('0');
-	}
+
 	for (f = 1; f <= a; f++)
 	{
 		if (n != 0)
@@ -39,6 +34,10 @@ int a, b, c, d, f;
 			_putchar(d + '0');
 			n = n % c;
 			c = c / 10;
+		}
+		else
+		{
+			_putchar(n + '0');
 		}
 	}
 }
