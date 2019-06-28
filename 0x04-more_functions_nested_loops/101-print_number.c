@@ -19,7 +19,7 @@ void print_number(int n)
 	}
 	b = g;
 	c = 1;
-	for (a = 1 ; b > 9 ;a++)
+	for (a = 1 ; b > 9 ; a++)
 	{
 		b = b / 10;
 		c = c * 10;
