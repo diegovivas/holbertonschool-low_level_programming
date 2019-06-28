@@ -6,18 +6,14 @@
  */
 void print_number(int n)
 {
-	unsigned int a, b, c, d, f, g;
+	unsigned int a, b, c, d, f;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		g = n * -1;
+		n = n * -1;
 	}
-	else
-	{
-		g = n;
-	}
-	b = g;
+	b = n;
 	c = 1;
 	for (a = 1 ; b > 9 ; a++)
 	{
@@ -26,8 +22,8 @@ void print_number(int n)
 	}
 	for (f = 1; f <= a; f++)
 	{
-		d = g / c;
-		g = g % c;
+		d = n / c;
+		n = n % c;
 		c = c / 10;
 		_putchar(d + '0');
 
