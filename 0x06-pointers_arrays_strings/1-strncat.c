@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * *_strncat - check the code for Holberton School students.
  *@dest:destino
