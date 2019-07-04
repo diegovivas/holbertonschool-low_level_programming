@@ -13,24 +13,24 @@ char *cap_string(char *s)
 	{
 		if (s[count] >= 'a' && s[count] <= 'z')
 		{
-			if(s[count-1] == ' ')
+			if(s[count-1] == ' ' || s[count-1] == '(')
 			{
                         s[count] = s[count] - 32;
 			}
 
-			if(s[count-1] == 9)
+			if(s[count-1] == 9 || s[count-1] =='"' ||s[count-1] ==')')
                         {
 				s[count] = s[count] - 32;
 			}
-			if(s[count-1] == '\n')
+			if(s[count-1] == '\n' || s[count-1] == '?' || s[count-1] == '{')
                         {
 				s[count] = s[count] - 32;
 			}
-			if(s[count-1] == '.')
+			if(s[count-1] == '.' || s[count-1] == '!' || s[count-1] == '}')
                         {
 				s[count] = s[count] - 32;
 			}
-			if(s[count-1] == ',')
+			if(s[count-1] == ',' || s[count-1] == ';')
                         {
 				s[count] = s[count] - 32;
 			}
