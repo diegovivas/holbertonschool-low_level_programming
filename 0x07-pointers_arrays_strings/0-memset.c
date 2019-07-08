@@ -9,6 +9,7 @@
 char *_memset(char *s, char b, unsigned int n)
 {
 	char *pointer = s;
+
 	while (s && n > 0)
 	{
 		*pointer = b;
