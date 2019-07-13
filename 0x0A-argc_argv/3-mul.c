@@ -3,7 +3,7 @@
 /**
  * main - check the code for Holberton School students.
  *@argc:arguments passed
- *@argv:array 
+ *@argv:array
  * Return: Always 0.
  */
 int main(int argc, char *argv[])
