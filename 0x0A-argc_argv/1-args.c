@@ -7,15 +7,9 @@
  */
 int main(int argc, char *argv[])
 {
-	int i;
-
 	if (*argv)
-		for (i = 0 ; i < argc ; i++)
-		{
-			if (i ==  argc - 1)
-				printf("%d\n", i);
-		}
-	printf("%d", i);
-
+	{	        
+	printf("%d\n", argc - 1);
+	}
 	return (0);
 }
