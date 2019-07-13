@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdliv.h>
+#include <stdlib.h>
 /**
  * main - check the code for Holberton School students.
  *@argc:argument
