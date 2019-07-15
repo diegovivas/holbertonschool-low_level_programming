@@ -19,16 +19,12 @@ int main (int argc, char *argv[])
 		while(monedas[ciclo] != '\0')
 		{
 			numero2 = monedas[ciclo];
-			if (numero >= numero2)
+			if (numero2 <= numero)
 			{
 				division = numero/numero2;
 				entero = division;
 				numero = numero - (numero2 * entero);
 				resultado = resultado + entero;
-			}
-			else if (numero < 0)
-			{
-				printf("0\n");
 			}
 			ciclo++;
 		}
