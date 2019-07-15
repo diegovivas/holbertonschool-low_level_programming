@@ -8,8 +8,8 @@
  */
 int main(int argc, char *argv[])
 {
-	double division;
-	unsigned int entero, resultado, numero, ciclo;
+	long double division;
+	long int entero, resultado, numero, ciclo;
 	unsigned char monedas[5] = {25, 10, 5, 2, 1};
 
 	numero = atoi(argv[1]);
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 			}
 			ciclo++;
 		}
-		printf("%u\n", resultado);
+		printf("%ld\n", resultado);
 		return (0);
 	}
 	else
