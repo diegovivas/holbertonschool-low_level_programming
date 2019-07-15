@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		ciclo = 0;
 		while (monedas[ciclo] != '\0')
 		{
-			if(a > 0)
+			if (a > 0)
 				{
 			if (numero >= monedas[ciclo])
 			{
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 				else
 				{
 					printf("0\n");
-					return(0);
+					return (0);
 				}
 		}
 		printf("%u\n", resultado);
