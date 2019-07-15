@@ -8,7 +8,7 @@
 int main (int argc, char *argv[])
 {
 	float division;
-	int entero,resultado,numero,numero2,ciclo;
+	int entero,resultado,numero,ciclo;
 	char monedas[5]={25,10,5,2,1};
 
 	numero = atoi(argv[1]);
@@ -18,12 +18,11 @@ int main (int argc, char *argv[])
 		ciclo = 0;
 		while(monedas[ciclo] != '\0')
 		{
-			numero2 = monedas[ciclo];
-			if (numero2 <= numero)
+			if (numero >= monedas[ciclo])
 			{
-				division = numero/numero2;
+				division = numero/monedas[ciclo];
 				entero = division;
-				numero = numero - (numero2 * entero);
+				numero = numero - (monedas[ciclo] * entero);
 				resultado = resultado + entero;
 			}
 			ciclo++;
