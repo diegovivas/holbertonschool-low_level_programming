@@ -24,14 +24,14 @@ char *_strdup(char *str)
 			contador++;
 		}
 		str2 = malloc(contador + 1);
+		if (str2 == NULL)
+		{
+			return (NULL);
+		}
 		punterosave = str2;
 		while (*str)
 		{
 			*punterosave++ = *str++;
-		}
-		if (str2 == NULL)
-		{
-			return (NULL);
 		}
 		else
 		{
