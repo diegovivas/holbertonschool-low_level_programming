@@ -27,7 +27,7 @@ char *_strdup(char *str)
 		punterosave = str2;
 		while (*str)
 		{
-			*punterosave++ = *src++;
+			*punterosave++ = *str++;
 		}
 		return (str2);
 	}
