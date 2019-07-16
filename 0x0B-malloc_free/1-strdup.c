@@ -29,6 +29,13 @@ char *_strdup(char *str)
 		{
 			*punterosave++ = *str++;
 		}
-		return (str2);
+		if (str2 == NULL)
+		{
+			return (NULL);
+		}
+		else
+		{
+			return (str2);
+		}
 	}
 }
