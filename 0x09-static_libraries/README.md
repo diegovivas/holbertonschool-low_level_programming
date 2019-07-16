@@ -1,0 +1,1 @@
+howto use, create and index a static librarie
