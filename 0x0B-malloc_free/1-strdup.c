@@ -33,9 +33,6 @@ char *_strdup(char *str)
 		{
 			*punterosave++ = *str++;
 		}
-		else
-		{
 			return (str2);
-		}
 	}
 }
