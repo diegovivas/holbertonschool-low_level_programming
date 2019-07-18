@@ -1,4 +1,3 @@
-
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,11 +31,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		cont2++;
 	}
-	if (n <= cont2)
+	if (n >= cont2)
 	{
-		cont2 = n;
+		n = cont2;
 	}
-		concad = malloc((cont1 + cont2 + 1) * sizeof(char));
+	concad = malloc((char *)(cont1 + n + 1) * sizeof(char));
 		if (concad == NULL)
 		{
 			return (NULL);
