@@ -35,12 +35,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		cont2 = n;
 	}
-		concad = malloc((cont1 + cont2) * sizeof(char));
+		concad = malloc((cont1 + cont2 + 1) * sizeof(char));
 		if (concad == NULL)
 		{
 			return (NULL);
 		}
-	for (i = 0; s1[i]; i++)
+	for (i = 0; s1[i] != 0; i++)
 	{
 		concad[i] = s1[i];
 	}
