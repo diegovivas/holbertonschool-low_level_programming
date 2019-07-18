@@ -32,7 +32,7 @@ int *array_range(int min, int max)
 	}
 	for (cont2 = 0; c <= b; cont2++)
 	{
-		pointer[cont2] = cont2;
+		pointer[cont2] = c;
 		c++;
 	}
 	return (pointer);
