@@ -3,13 +3,13 @@
 #include <stdlib.h>
 /**
  * _calloc - check the code for Holberton School students.
- *@nmemb:array
- *@size: size array
- * Return: Always 0.
+ *@nmemb:number of elements in array
+ *@size: size bytes
+ * Return: pointer.
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *pointer;
+	char *pointer;
 	unsigned int cont;
 
 	if (nmemb == 0 || size == 0)
@@ -17,13 +17,15 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 	pointer = malloc(nmemb * size);
+
 	if (pointer == NULL)
 	{
 		return (NULL);
 	}
+
 	for (cont = 0; cont < (nmemb * size); cont++)
 	{
 		pointer[cont] = 0;
 	}
-		return (pointer);
+	return (pointer);
 }
