@@ -11,7 +11,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 
-	unsigned int cont1, cont2, i, e;
+	int cont1, cont2, i, e;
 	char *concad;
 
 	if (s1 == NULL)
@@ -31,7 +31,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		cont2++;
 	}
-	if (n <= cont2)
+	if (n <= (unsigned int) cont2)
 	{
 		cont2 = n;
 	}
