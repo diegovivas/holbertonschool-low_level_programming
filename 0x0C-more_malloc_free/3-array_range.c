@@ -9,31 +9,24 @@
  */
 int *array_range(int min, int max)
 {
-	int a, b, counter, cont2, c;
+	int counter, cont2;
 	int *pointer;
 
-	a = min;
-	b = max;
-	c = min;
+	counter = max - min;
 
 	if (min > max)
 	{
 		return (NULL);
-	}
-	while (a <= b)
-	{
-		counter++;
-		a++;
 	}
 	pointer = malloc(counter * sizeof(int));
 	if (pointer == NULL)
 	{
 		return (NULL);
 	}
-	for (cont2 = 0; c <= b; cont2++)
+	for (cont2 = 0; cont2 <= counter; cont2++)
 	{
-		pointer[cont2] = c;
-		c++;
+		pointer[cont2] = min;
+		min++;
 	}
 	return (pointer);
 }
