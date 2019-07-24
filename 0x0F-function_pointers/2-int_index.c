@@ -13,10 +13,6 @@ int int_index(int *array, int size, int (*cmp)(int))
 	int sizet = 0;
 	int eye;
 
-	if (size <= 0)
-	{
-		return (-1);
-	}
 	while (sizet < size)
 	{
 	eye = cmp(array[sizet]);
@@ -26,8 +22,12 @@ int int_index(int *array, int size, int (*cmp)(int))
 	}
 	sizet++;
 	}
-	if (eye)
-	return (sizet);
-	else
+	if (size <= 0 || eye == 0)
+	{
 		return (-1);
+	}
+	else
+	{
+		return (sizet);
+	}
 }
