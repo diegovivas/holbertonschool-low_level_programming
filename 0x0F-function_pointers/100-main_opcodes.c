@@ -9,6 +9,7 @@
 int main(int argc, char *argv[])
 {
 	char a;
+
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
 	if (a < 0)
 	{
 		printf("Error\n");
-		exit(0);
+		exit(2);
 	}
 	return (0);
 }
