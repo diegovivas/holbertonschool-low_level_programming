@@ -9,16 +9,16 @@
  */
 int main(int argc, char **argv)
 {
-
 	int a, b;
 
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+
 	if (!get_op_func(argv[2]) || argv[2][1])
 	{
 		printf("Error\n");
