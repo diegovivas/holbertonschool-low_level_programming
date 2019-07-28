@@ -10,11 +10,11 @@
 void print_all(const char * const format, ...)
 {
 	va_list(pointer);
-	int count;
+	int count = 0;
 	char *string;
 
 	va_start(pointer, format);
-	for (count = 0; format && format[count] ; count++)
+	while (format && format[count])
 	{
 		switch (format[count])
 		{
@@ -41,6 +41,7 @@ void print_all(const char * const format, ...)
 		{
 			printf(", ");
 		}
+		count++;
 	}
 	va_end(pointer);
 	printf("\n");
