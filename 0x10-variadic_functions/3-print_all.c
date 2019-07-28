@@ -10,7 +10,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list(pointer);
-	int count = 0;
+	int count = 0, id = 1;
 	char *string;
 
 	va_start(pointer, format);
@@ -20,27 +20,33 @@ void print_all(const char * const format, ...)
 		{
 		case 'c':
 			printf("%c", va_arg(pointer, int));
+			id = 0;
 			break;
 		case 'i':
 			printf("%i", va_arg(pointer, int));
+			id = 0;
 			break;
 		case 'f':
 			printf("%f", va_arg(pointer, double));
+			id = 0;
 			break;
 		case 's':
 			string = va_arg(pointer, char*);
 			if (!string)
 			{
 				printf("(nill)");
+				id = 0;
 				break;
 			}
 			printf("%s", string);
+			id = 0;
 			break;
 		}
-		if (format[count + 1] != '\0' && count != 1)
+		if (format[count + 1] != '\0' && id == 0)
 		{
 			printf(", ");
 		}
+		id = 1;
 		count++;
 	}
 	va_end(pointer);
