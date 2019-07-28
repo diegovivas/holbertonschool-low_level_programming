@@ -20,8 +20,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		number = va_arg(pointer, char*);
 
-		printf("%s", number);
-
+		if (number)
+			printf("%s", number);
+		else
+			printf("(nil)");
 		if (separator && (counter < n - 1))
 			printf("%s", separator);
 	}
