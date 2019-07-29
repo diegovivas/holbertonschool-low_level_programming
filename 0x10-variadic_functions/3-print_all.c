@@ -14,7 +14,7 @@ void print_all(const char * const format, ...)
 	char *string;
 
 	va_start(pointer, format);
-	while (format[count] && format)
+	while (format && format[count])
 	{
 		switch (format[count])
 		{
@@ -43,7 +43,7 @@ void print_all(const char * const format, ...)
 			id =0;
 			break;
 		}
-		if (format[count + 1] != '\0' && id == 0)
+		if (id == 0 && format[count + 1] != '\0')
 		{
 			printf(", ");
 		}
