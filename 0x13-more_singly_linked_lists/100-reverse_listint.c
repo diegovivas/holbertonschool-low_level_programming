@@ -33,6 +33,7 @@ listint_t *reverse_listint(listint_t **head)
 			*head = (*head)->next;
 		}
 	}
-	(*head)->next = pointer1;
+	pointer2->next = pointer1;
+	*head = pointer2;
 	return (*head);
 }
