@@ -11,8 +11,7 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *nodo;
-	listint_t *pointer;
+	listint_t *nodo, *pointer;
 	unsigned int count = 0;
 
 	nodo = malloc(sizeof(listint_t));
@@ -22,10 +21,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	}
 	nodo->n = n;
-	nodo->next = NULL;
 	if (!*head && idx != 0)
 	{
-		free(*head);
 		return (NULL);
 	}
 	else
