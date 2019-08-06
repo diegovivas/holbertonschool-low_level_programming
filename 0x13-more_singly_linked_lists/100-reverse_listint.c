@@ -13,7 +13,7 @@ listint_t *reverse_listint(listint_t **head)
 
 	if (!*head)
 	{
-		return (NULL);
+		return (*head);
 	}
 	if ((*head)->next == NULL)
 	{
