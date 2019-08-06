@@ -13,34 +13,36 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	listint_t *pointer;
 	listint_t *pointer2;
 	unsigned int count = 0;
-	int a;
+	unsigned int count2 = 0;
 
 	if (*head)
 	{
 		pointer = *head;
 		pointer2 = pointer->next;
-		if (index > 0)
+		for (count2 = 0; pointer != NULL; count2++)
+			pointer = pointer->next;
+		if (index == 0)
 		{
-			while (count < index - 1)
+			*head = (*head)->next;
+			free(pointer);
+			return (1);
+		}
+		else if (index < count2)
+		{
+			pointer = *head;
+			while (count < (index - 1))
 			{
 				pointer = pointer->next;
 				pointer2 = pointer2->next;
-				a = 1;
 				count++;
 			}
 			pointer->next = pointer2->next;
 			free(pointer2);
+			return (1);
 		}
 		else
-		{
-			*head = pointer->next;
-			free(pointer);
-			a = 1;
-		}
+			return (-1);
 	}
 	else
-	{
-		a = -1;
-	}
-	return (a);
+		return (-1);
 }
