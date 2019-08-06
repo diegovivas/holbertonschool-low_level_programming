@@ -16,7 +16,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	pointer = head;
 	if (pointer != NULL)
 	{
-		while (count < index)
+		while (count != index)
 		{
 			pointer = pointer->next;
 			count++;
@@ -25,5 +25,4 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	}
 	else
 		return (NULL);
-	return (NULL);
 }
