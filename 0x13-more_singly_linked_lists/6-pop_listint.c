@@ -12,9 +12,14 @@ int pop_listint(listint_t **head)
 	listint_t *puntero;
 	int keep;
 
-	puntero = *head;
-	keep = puntero->n;
-	*head = puntero->next;
-	free(puntero);
-	return (keep);
+	if (*head)
+	{
+		puntero = *head;
+		keep = puntero->n;
+		*head = puntero->next;
+		free(puntero);
+		return (keep);
+	}
+	else
+		return (0);
 }
