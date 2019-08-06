@@ -14,15 +14,13 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	unsigned int count = 0;
 
 	pointer = head;
-	if (pointer != NULL)
+
+	while (pointer)
 	{
-		while (count != index)
-		{
-			pointer = pointer->next;
-			count++;
-		}
+		if (count == index)
+			return (pointer);
+		pointer = pointer->next;
+		count++;
 	}
-	else
-		return (NULL);
-	return (pointer);
+	return (NULL);
 }
