@@ -24,7 +24,6 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		{
 			*head = (*head)->next;
 			free(pointer);
-			return (1);
 		}
 		else if (index < count2)
 		{
@@ -37,10 +36,10 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 			pointer2 = pointer->next;
 			pointer->next = pointer2->next;
 			free(pointer2);
-			return (1);
 		}
 		else
 			return (-1);
+		return (1);
 	}
 	else
 		return (-1);
