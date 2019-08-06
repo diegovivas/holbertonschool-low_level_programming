@@ -23,22 +23,32 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	nodo->n = n;
 	nodo->next = NULL;
-	if (!*head)
+	if (!*head && idx != 0)
 	{
 		free(*head);
 		return (NULL);
 	}
 	else
 	{
+		if (idx == 0)
+		{
+			nodo->next = *head;
+			*head = nodo;
+		}
+		else
+		{
 		pointer = *head;
-		while (count < idx - 1)
+		while (count < idx - 1 && pointer->next)
 		{
 			pointer = pointer->next;
 			count++;
 		}
-		nodo->next = pointer->next;
-		pointer->next = nodo;
-
+		if (count == idx - 1)
+		{
+			nodo->next = pointer->next;
+			pointer->next = nodo;
+		}
+		}
 		return (*head);
 	}
 }
