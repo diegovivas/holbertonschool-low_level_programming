@@ -18,7 +18,6 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	if (*head)
 	{
 		pointer = *head;
-		pointer2 = pointer->next;
 		for (count2 = 0; pointer != NULL; count2++)
 			pointer = pointer->next;
 		if (index == 0)
@@ -33,9 +32,9 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 			while (count < (index - 1))
 			{
 				pointer = pointer->next;
-				pointer2 = pointer2->next;
 				count++;
 			}
+			pointer2 = pointer->next;
 			pointer->next = pointer2->next;
 			free(pointer2);
 			return (1);
