@@ -22,11 +22,16 @@ unsigned int binary_to_uint(const char *b)
 	}
 	for (cont2 = (cont - 1); cont2 >= 0 ; cont2--)
 	{
-		if (b[cont2] == '1')
+		if (b[cont2] == '0' || b[cont2] == '1')
 		{
-			final += mul;
+			if (b[cont2] == '1')
+			{
+				final += mul;
+			}
+			mul *= 2;
 		}
-		mul *= 2;
+		else
+			return (0);
 	}
 
 
