@@ -8,14 +8,16 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned int number;
+	unsigned long int number = 1;
 	int start = 0;
+
+	number = number << 63;
 
 	if (n == 0)
 	{
 		_putchar('0');
 	}
-	for (number = 1 << 31; number > 0; number >>= 1)
+	for (; number > 0; number = number >> 1)
 	{
 		if (n & number)
 		{
