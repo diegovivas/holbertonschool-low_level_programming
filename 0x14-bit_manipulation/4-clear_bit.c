@@ -18,7 +18,12 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	}
 	pointer = n;
 	ind <<= index;
-	if (*pointer >= ind)
-		*pointer -= ind;
-	return (1);
+	if (*pointer)
+	{
+		if (*pointer >= ind)
+			*pointer -= ind;
+		return (1);
+	}
+	else
+		return (-1);
 }
