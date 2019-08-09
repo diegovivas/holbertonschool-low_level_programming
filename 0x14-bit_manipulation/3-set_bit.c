@@ -18,7 +18,8 @@ int set_bit(unsigned long int *n, unsigned int index)
 	}
 	pointer = n;
 	ind <<= index;
-	*pointer += ind;
+	if (!(*pointer & ind))
+		*pointer += ind;
 	return (1);
 
 }
