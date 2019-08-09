@@ -12,7 +12,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	unsigned long int *pointer;
 	unsigned int ind = 1;
 
-	if (ind > 32)
+	if (index > 31)
 	{
 		return (-1);
 	}
