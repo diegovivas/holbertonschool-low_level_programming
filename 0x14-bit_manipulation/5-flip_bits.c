@@ -2,9 +2,10 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * flip_bits - check the number of bits .
+ * @n: number 1
+ * @m: number 2
+ * Return: number of bit to flip.
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
