@@ -17,7 +17,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int count2 = 0;
 	char buf[1024];
 
-	file = open(filename,O_RDONLY);
+	file = open(filename, O_RDONLY);
 	if (file == -1)
 	{
 		printf("FAIL");
@@ -25,7 +25,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	count2 = read(file, buf, letters);
 	buf[count2] = '\0';
+	write(STDOUT_FILENO, buf, count2);
 	close(file);
-	printf("%s\n", buf);
+
 	return (count2);
 }
