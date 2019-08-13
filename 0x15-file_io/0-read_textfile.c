@@ -17,12 +17,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int count2 = 0;
 	char buf[1024000];
 
+	if (!filename)
+		return (0);
+
 	file = open(filename, O_RDONLY);
 	if (file == -1)
 	{
 		printf("FAIL");
 		exit(1);
 	}
+	return (0);
 	count2 = read(file, buf, letters);
 	buf[count2] = '\0';
 	write(STDOUT_FILENO, buf, count2);
