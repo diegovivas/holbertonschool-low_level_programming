@@ -21,14 +21,14 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	file1 = open(av[1], O_RDONLY, 0664);
+	file1 = open(av[1], O_RDONLY);
 	if (file1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	close(file1);
-	file2 = open(av[2], O_WRONLY | O_CREAT | O_APPEND | O_TRUNC, 0600);
+	file2 = open(av[2], O_WRONLY | O_CREAT | O_APPEND | O_TRUNC, 0664);
 	if (file2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
