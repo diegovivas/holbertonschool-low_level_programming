@@ -13,7 +13,7 @@
  */
 int main(int ac, char **av)
 {
-	int file1, file2, len;
+	int file1, file2, len, c1, c2;
 	int buf[1024];
 
 	if (ac != 3)
@@ -36,14 +36,14 @@ int main(int ac, char **av)
 		exit(99);
 	}
 	write(file2, buf, len);
-	close(file1);
-	if (close(file1) == -1)
+	c1 = close(file1);
+	if (c1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1);
 		exit(100);
 	}
-	close(file2);
-	if (close(file2) == -1)
+	c2 = close(file2);
+	if (c2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file2);
 		exit(100);
