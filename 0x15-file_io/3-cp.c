@@ -35,13 +35,12 @@ int main(int ac, char **av)
 		exit(99);
 	}
 	while ((len = read(file1, buf, 1024)) != 0)
-	{	wr = write(file2, buf, len); }
-	c1 = close(file1), c2 = close(file2);
+	{	wr = write(file2, buf, len);
 	if (wr == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		exit(99);
-	}
+		exit(99); }}
+	c1 = close(file1), c2 = close(file2);
 	if (c1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1);
