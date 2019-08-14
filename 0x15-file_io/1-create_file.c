@@ -27,13 +27,6 @@ int create_file(const char *filename, char *text_content)
 	{
 		count2++;
 	}
-	if (text_content == NULL)
-	{
-		write(file, "", count2);
-		close(file);
-		return (1);
-
-	}
 	write(file, text_content, count2);
 	close(file);
 	return (1);
