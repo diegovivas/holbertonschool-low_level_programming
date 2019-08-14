@@ -36,11 +36,13 @@ int main(int ac, char **av)
 		exit(99);
 	}
 	write(file2, buf, len);
+	close(file1);
 	if (close(file1) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1);
 		exit(100);
 	}
+	close(file2);
 	if (close(file2) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file2);
