@@ -11,7 +11,7 @@
  * @av: array
  * Return: success.
  */
-int main(int ac, char **av)
+int main(int ac, char *av[])
 {
 	int file1, file2, len, c1, c2;
 	char buf[1024];
