@@ -39,7 +39,7 @@ int main(int ac, char **av)
 		if (len == -1)
 		{dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 			exit(98); }
-		wr = write(file2, buf, len); }
+		write(file2, buf, len); }
 	c1 = close(file1), c2 = close(file2);
 	if (c1 == -1)
 	{		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1);
