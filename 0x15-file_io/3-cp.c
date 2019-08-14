@@ -13,7 +13,7 @@
  */
 int main(int ac, char **av)
 {
-	int file1, file2, len, c1, c2;
+	int file1, file2, len, c1, c2, wr;
 	int buf[1024];
 
 	if (ac != 3)
@@ -35,14 +35,18 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-	write(file2, buf, len);
-	c1 = close(file1);
+
+	wr = write(file2, buf, len), c1 = close(file1), c2 = close(file2);
+	if (wr == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		exit(99);
+	}
 	if (c1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1);
 		exit(100);
 	}
-	c2 = close(file2);
 	if (c2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file2);
