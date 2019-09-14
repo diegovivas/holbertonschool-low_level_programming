@@ -4,8 +4,9 @@
 #include "lists.h"
 
 /**
- * dlistint_len - check the code for Holberton School students.
- *@h: head
+ * add_dnodeint_end - check the code for Holberton School students.
+ *@head: head
+ *@n: int
  * Return: Always EXIT_SUCCESS.
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
@@ -15,17 +16,23 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
 	ojo = malloc(sizeof(dlistint_t));
 	if (ojo == NULL)
-		return NULL;
+		return (NULL);
 	ojo->n = n;
 	ojo->prev = NULL;
 	ojo->next = NULL;
-	puntero = *head;
-	while(puntero != NULL)
+	if (*head == NULL)
 	{
-		puntero = puntero->next;
+		*head = ojo;
 	}
-	puntero->next = ojo;
-	ojo->prev = puntero;
-
+	else
+	{
+		puntero = *head;
+		while (puntero->next)
+		{
+			puntero = puntero->next;
+		}
+		puntero->next = ojo;
+		ojo->prev = puntero;
+	}
 	return (*head);
 }
