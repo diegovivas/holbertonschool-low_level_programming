@@ -11,14 +11,13 @@
 size_t dlistint_len(const dlistint_t *h)
 {
 	const dlistint_t *ojo;
-	size_t cont;
+	size_t cont = 0;
 
 	ojo = h;
-	while (ojo->next)
+	while (ojo)
 	{
 		ojo = ojo->next;
 		cont++;
 	}
-	cont++;
 	return (cont);
 }
