@@ -28,11 +28,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		if (idx == 0)
 		{			ojo->next = *h;
+			(*h)->prev = ojo;
 			*h = ojo;
 		}
 		else
-		{
-			puntero = *h;
+		{			puntero = *h;
 			while (ojo2 < idx - 1  && puntero->next)
 			{				puntero = puntero->next;
 				ojo2++;
