@@ -12,7 +12,7 @@ void free_dlistint(dlistint_t *head)
 {
 	dlistint_t *puntero;
 
-	if(!head)
+	if (!head)
 		return;
 
 	puntero = head;
