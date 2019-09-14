@@ -33,17 +33,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		else
 		{
 			puntero = *h;
-			while (ojo2 < idx && puntero->next)
-			{
-				puntero = puntero->next;
+			while (ojo2 < idx  && puntero->next)
+			{				puntero = puntero->next;
 				ojo2++;
 			}
 			if (ojo2 == idx)
-			{
-				puntero2 = puntero->next;
+			{				puntero2 = puntero->next;
 				ojo->next = puntero->next;
 				ojo->prev = puntero;
-				puntero2->prev = ojo;
+				if (puntero2)
+					puntero2->prev = ojo;
 				puntero->next = ojo;
 			}
 			else
