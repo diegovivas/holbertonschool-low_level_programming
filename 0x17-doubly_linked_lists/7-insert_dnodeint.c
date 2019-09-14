@@ -12,11 +12,8 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *ojo;
-	dlistint_t *puntero;
-	dlistint_t *puntero2;
+	dlistint_t *ojo, *puntero;
 	unsigned int ojo2 = 0;
-	unsigned int tam = 0;
 
 	ojo = malloc(sizeof(dlistint_t));
 	if (ojo == NULL)
@@ -24,31 +21,35 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	ojo->n = n;
 	ojo->prev = NULL;
 	ojo->next = NULL;
-	puntero = *h;
-	while (puntero)
+	if (!*h && idx != 0)
 	{
-		puntero = puntero->next;
-		tam++;
-	}
-	if (tam < idx)
 		return (NULL);
-	if (idx == 0 && *h == NULL && puntero->next == NULL)
-	{
-		ojo = *h;
-		return (*h);
 	}
-	puntero = *h;
-	puntero2 = puntero->next;
-	while (ojo2 < (idx - 1))
+	else
 	{
+		if (idx == 0)
+		{
+			ojo->next = *h;
+			*h = ojo;
+		}
+		puntero = *h;
+		while (ojo2 < idx && puntero->next)
+		{
+			puntero = puntero->next;
+			ojo2++;
+		}
+		if (ojo2 == idx)
+		{
+			ojo->next = puntero->next;
+			ojo->prev = puntero;
+			puntero->next->prev = ojo;
+			puntero->next = ojo;
+		}
+		else
+			return (NULL);
+		return (ojo);
+	}
+	return (NULL);
 
-		puntero = puntero->next;
-		puntero2 = puntero2->next;
-		ojo2++;
-	}
-	puntero->next = ojo;
-	ojo->prev = puntero;
-	ojo->next = puntero2;
-	puntero2->prev = ojo;
-	return (*h);
+
 }
