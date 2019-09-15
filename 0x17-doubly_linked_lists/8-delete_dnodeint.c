@@ -42,7 +42,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		}
 		puntero2 = puntero->next->next;
 		puntero->next = puntero2;
-		puntero2->prev = puntero;
+		if (puntero2)
+			puntero2->prev = puntero;
 		puntero = puntero->next;
 		free(puntero);
 
