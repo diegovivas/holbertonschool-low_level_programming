@@ -11,7 +11,7 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *puntero, *puntero2;
+	dlistint_t *puntero, *puntero2, *puntero3;
 	unsigned int ojo = 0;
 
 
@@ -40,12 +40,12 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			puntero = puntero->next;
 			ojo++;
 		}
+		puntero3 = puntero->next;
 		puntero2 = puntero->next->next;
 		puntero->next = puntero2;
 		if (puntero2)
 			puntero2->prev = puntero;
-		puntero = puntero->next;
-		free(puntero);
+		free(puntero3);
 
 	}
 	else
