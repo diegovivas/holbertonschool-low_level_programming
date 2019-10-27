@@ -12,6 +12,8 @@ void insertion_sort_list(listint_t **list)
 	int flag = 0;
 
 	ojo = *list;
+	if (*list == NULL || (*list)->next == NULL)
+		return;
 	while (ojo)
 	{
 		ojo2 = ojo;
@@ -19,26 +21,16 @@ void insertion_sort_list(listint_t **list)
 		{
 			ojo3 = ojo->prev;
 			if (ojo->next != NULL)
-			{
-				ojo3->next = ojo->next;
 				ojo->next->prev = ojo3;
-			}
-			else
-				ojo3->next = NULL;
+			ojo3->next = ojo->next;
 			if (ojo3->prev != NULL)
-			{
-				ojo->prev = ojo3->prev;
 				ojo3->prev->next = ojo;
-			}
-			else
-				ojo->prev = NULL;
+			ojo->prev = ojo3->prev;
 			ojo3->prev = ojo;
 			ojo->next = ojo3;
 			if (flag == 0)
-			{
 				ojo2 = ojo3;
-				flag = 1;
-			}
+			flag = 1;
 			if ((*list)->prev != NULL)
 				*list = (*list)->prev;
 			print_list(*list);
