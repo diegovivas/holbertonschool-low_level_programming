@@ -50,12 +50,10 @@ int lomuto(int *array,int menor, int mayor, size_t size)
 		}
 		cont++;
 	}
-	if (array[final] > pivote)
-		mover(&array[final], &array[mayor]);
-	if (&array[final] != &array[cont])
+	if (array[final] > array[mayor])
 	{
+		mover(&array[final], &array[mayor]);
 		print_array(array, size);
-
 	}	
 	return (final);
 }
