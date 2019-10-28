@@ -10,7 +10,8 @@ void quick_sort(int *array, size_t size)
 {
 	int menor = 0;
 	int mayor = size - 1;
-
+	if (!array || size <= 2)
+		return ;
 	rqs(array, menor, mayor, size);
 }
 
