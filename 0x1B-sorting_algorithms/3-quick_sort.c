@@ -10,15 +10,16 @@ void quick_sort(int *array, size_t size)
 {
 	int menor = 0;
 	int mayor = size - 1;
-	if (!array || size <= 2)
-		return ;
+
+	if (array == NULL)
+		return;
 	rqs(array, menor, mayor, size);
 }
 
 void rqs(int *array, int menor, int mayor, size_t size)
 {
 	int piv;
-	if (menor < mayor - 1)
+	if (menor < mayor)
 	{
 		piv = lomuto(array, menor, mayor, size);
 		rqs(array, menor, (piv - 1), size);
