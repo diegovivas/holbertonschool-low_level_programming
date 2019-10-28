@@ -11,7 +11,7 @@ void quick_sort(int *array, size_t size)
 	int menor = 0;
 	int mayor = size - 1;
 
-	if (array == NULL)
+	if (array == NULL || size == 2)
 		return;
 	rqs(array, menor, mayor, size);
 }
@@ -19,6 +19,7 @@ void quick_sort(int *array, size_t size)
 void rqs(int *array, int menor, int mayor, size_t size)
 {
 	int piv;
+
 	if (menor < mayor)
 	{
 		piv = lomuto(array, menor, mayor, size);
