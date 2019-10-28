@@ -11,9 +11,10 @@ void insertion_sort_list(listint_t **list)
 	listint_t *ojo, *ojo2, *ojo3;
 	int flag = 0;
 
-	ojo = *list;
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
+
+	ojo = *list;
 	while (ojo)
 	{
 		ojo2 = ojo;
