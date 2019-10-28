@@ -8,11 +8,14 @@ void mover(int *a, int *b);
 
 void quick_sort(int *array, size_t size)
 {
-	int menor = 0;
-	int mayor = size - 1;
+	int menor;
+	int mayor;
 
 	if (array == NULL || size < 2)
 		return;
+
+	menor = 0;
+	mayor = size - 1;
 	rqs(array, menor, mayor, size);
 }
 
