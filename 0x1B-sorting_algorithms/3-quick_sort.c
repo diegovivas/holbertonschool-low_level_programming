@@ -48,7 +48,7 @@ int lomuto(int *array,int menor, int mayor, size_t size)
 		cont++;
 	}
 	mover(&array[final], &array[mayor]);
-	if (&array[final] != &array[mayor])
+	if (&array[final] != &array[cont])
 	{
 		print_array(array, size);
 
