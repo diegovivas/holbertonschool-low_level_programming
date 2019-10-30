@@ -10,7 +10,7 @@ void counting_sort(int *array, size_t size)
 	int n1, n2, temp = 0;
 	int *at, *ar2;
 
-	for (;cont < size - 1; cont++)
+	for (;cont < size; cont++)
 	{
 		if (temp < array[cont])
 			temp = array[cont];
@@ -38,10 +38,12 @@ void counting_sort(int *array, size_t size)
 		array[cont] = ar2[cont];
 		cont++;
 	}
+	free(ar2);
+	free(at);
 }
 int *ordenar(int *at, int temp, size_t size, int *array)
 {
-	int temp2, cont2 = 0;
+	int temp2 = 0, cont2 = 0;
 	size_t cont3;
 
 	while (cont2 <= temp)
@@ -49,7 +51,7 @@ int *ordenar(int *at, int temp, size_t size, int *array)
                 at[cont2] = 0;
                 cont2++;
 	}
-	cont2 = 0;
+	cont2 = 1;
 	cont3 = 0;
 	while (cont3 < size)
 	{
@@ -59,8 +61,7 @@ int *ordenar(int *at, int temp, size_t size, int *array)
 	}
         while (cont2 <= temp)
 	{
-		if (at[cont2 - 1])
-                        at[cont2] = at[cont2] + at[cont2 - 1];
+		at[cont2] = at[cont2] + at[cont2 - 1];
 		if (cont2 < temp)
 			printf("%d, ", at[cont2]);
 		else
