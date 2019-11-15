@@ -11,22 +11,14 @@ def island_perimeter(grid):
             if horizontal == 1:
                 if idx1 != 0 and grid[idx1 - 1][idx2] == 0:
                     perimeter += 1
-                if idx1 == 0:
-                    perimeter += 1
                 if idx1 != maxidx and grid[idx1 + 1][idx2] == 0:
                     perimeter += 1
-                if idx1 == maxidx:
-                    perimeter += 3
                 if idx2 != 0 and grid[idx1][idx2 - 1] == 0:
                     perimeter += 1
                 if idx2 == 0:
                     perimeter += 1
                 if idx2 != maxvertical and grid[idx1][idx2 + 1] == 0:
                     perimeter += 1
-                if idx2 == maxvertical:
-                    perimeter += 1
             else:
                 pass
-                
-
     return (perimeter)
