@@ -31,6 +31,11 @@ const binary_tree_t *second)
 	size_t first_depth, second_depth, dif = 0, cont = 0;
 	binary_tree_t *ojo = (binary_tree_t *)first, *ojo2 = (binary_tree_t *)second;
 
+	if (firts == NULL || second == NULL)
+	{
+		return (NULL);
+	}
+
 	first_depth = binary_tree_depth(first);
 	second_depth = binary_tree_depth(second);
 
