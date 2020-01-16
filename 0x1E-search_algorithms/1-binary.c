@@ -35,6 +35,9 @@ int binary_search(int *array, size_t size, int value)
 	size_t ojo = 0, cont = 0;
 	size_t max = size - 1;
 
+	if (array == NULL)
+		return (-1);
+
 	while (cont <= max)
 	{
 		fprint(array, cont, max + 1);
